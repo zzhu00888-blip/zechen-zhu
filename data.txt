@@ -1,0 +1,2 @@
+Hello GitHub Actions.
+This is a custom action test by Zechen Zhu.

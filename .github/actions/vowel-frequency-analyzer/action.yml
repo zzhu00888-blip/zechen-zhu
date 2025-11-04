@@ -1,0 +1,14 @@
+name: Vowel Frequency Analyzer
+description: Count vowel frequency in a text file
+inputs:
+  file:
+    description: 'Input text file to analyze'
+    required: true
+    default: 'data.txt'
+runs:
+  using: "composite"
+  steps:
+    - name: Run vowel frequency analyzer
+      shell: bash
+      run: |
+        python3 "${{ github.action_path }}/frequency.py" "${{ inputs.file }}"

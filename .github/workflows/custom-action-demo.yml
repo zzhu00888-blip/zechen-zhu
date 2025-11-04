@@ -1,0 +1,24 @@
+name: Custom Action Demo
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Run vowel frequency analyzer action
+        uses: ./.github/actions/vowel-frequency-analyzer
+        with:
+          file: data.txt
